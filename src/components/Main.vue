@@ -1,0 +1,92 @@
+<template>
+  <v-main class="mainmenu">
+    <v-container>
+      <v-row>
+        <v-col lg="5">
+          <div class="Main-text">
+            <h1 class="intro-text">
+              All-in-one business management <br />
+              software
+            </h1>
+            <p class="intro-subtext">
+              Tigg ERP is a cloud-based SaaS to manage your business securely
+              and remotely.
+            </p>
+            <h2 class="intro-question">Interested to know more about TIGG?</h2>
+            <p class="intro-contact">
+              Provide us your Detail and we will contact you.
+            </p>
+            <div class="intro-contactFrom">
+    <v-text-field
+      label="Enter Your Phone Number:"
+      :rules="rules"
+      hide-details="auto"
+    ></v-text-field>
+    <v-btn
+  elevation="2"
+  large color="success"
+>SUBMIT</v-btn>   
+  </div>
+          </div>
+        </v-col>
+        <v-col lg="7">
+          <v-img
+          class="homeImg"
+            max-height="500"
+            max-width="700"
+            src="../assets/ok.png"
+          ></v-img>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-main>
+</template>
+
+<script>
+export default {
+  name: "Main",
+};
+</script>
+<style scoped>
+h1.intro-text {
+  /* position: absolute; */
+  width: 563px;
+  height: 174px;
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 56px;
+  /* or 56px */
+
+  color: #0a1a66;
+}
+div.Main-text {
+  text-align: left;
+  padding-left: -40px;
+}
+p.intro-subtext {
+  /* position: absolute; */
+  margin-top: 40px;
+  width: 396px;
+  height: 51px;
+  line-height: 17px;
+}
+.mainmenu {
+  background: rgba(50, 129, 255, 0.05);
+}
+h2.intro-question {
+  font-family: poppins;
+  font-size: 15px;
+  font-weight: 600px;
+}
+p.intro-contact {
+  color: #ffb032;
+  font-size: 12px;
+}
+div.intro-contactFrom{
+  display: inline-flex;
+  align-content: left;
+}
+.homeImg {
+  margin-top: 50px;
+}
+</style>
