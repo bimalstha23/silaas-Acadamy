@@ -2,37 +2,44 @@
   <v-containers>
     <h1>All your data is secure</h1>
     <v-row class="data-cards">
-      <v-col lg="4">
-        <v-card class="data-card" elevation="4" shaped>
+      <v-col lg="4" md="4" sm="4" xs="12">
+        <v-card class="data-card" elevation="4">
           <v-img
             class="card-icon"
             max-height="38"
             max-width="37"
             src="../assets/icon1.png"
           ></v-img>
-          <p class="card-description">Data is replicated to 3 places so that its never lost.</p>
+          <p class="card-description">
+            Data is replicated to 3 places so that its never lost.
+          </p>
         </v-card>
       </v-col>
       <v-col lg="4">
-        <v-card class="data-card" elevation="4" shaped>
+        <v-card class="data-card" elevation="4">
           <v-img
             class="card-icon"
             max-height="38"
             max-width="37"
             src="../assets/icon2.png"
           ></v-img>
-          <p class="card-description">Data is always encrypted at rest and in transit, so that only the ones you authorize can see you data, no-one else.</p>
+          <p class="card-description">
+            Data is always encrypted at rest and in transit, so that only the
+            ones you authorize can see you data, no-one else.
+          </p>
         </v-card>
       </v-col>
       <v-col lg="4">
-        <v-card class="data-card" elevation="4" shaped>
+        <v-card class="data-card" elevation="4">
           <v-img
             class="card-icon"
             max-height="38"
             max-width="37"
             src="../assets/icon3.png"
           ></v-img>
-          <p class="card-description">Layered security approach, from infrastructure to software.</p>
+          <p class="card-description">
+            Layered security approach, from infrastructure to software.
+          </p>
         </v-card>
       </v-col>
     </v-row>

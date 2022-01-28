@@ -1,10 +1,16 @@
 <template>
   <v-app>
     <Header />
-    <Main />
-    <Section />
-    <Services />
-    <DataSection />
+    <v-main>
+      <Main />
+      <Section />
+      <Services />
+      <DataSection />
+      <FeaturesSection />
+      <AppSection />
+      <ContactSection />
+      <FooterSection />
+    </v-main>
   </v-app>
 </template>
 
@@ -14,8 +20,22 @@ import Main from "./components/Main.vue";
 import Section from "./components/Section.vue";
 import Services from "./components/Services.vue";
 import DataSection from "./components/DataSection.vue";
+import FeaturesSection from "./components/FeaturesSection.vue";
+import AppSection from "./components/AppSection.vue";
+import ContactSection from "./components/ContactSection.vue";
+import FooterSection from "./components/FooterSec.vue";
 export default {
-  components: { Header, Main, Section, Services, DataSection, },
+  components: {
+    Header,
+    Main,
+    Section,
+    Services,
+    DataSection,
+    FeaturesSection,
+    AppSection,
+    ContactSection,
+    FooterSection,
+  },
   name: "App",
 };
 </script>
@@ -27,6 +47,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

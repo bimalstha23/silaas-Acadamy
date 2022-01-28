@@ -18,26 +18,9 @@
 
 <script>
 export default {
-  name: "Section",
+  name: "FooterSec",
 };
 </script>
 <style scoped>
-h1.section-title {
-  font-size: 50px;
-  font-weight: 600;
-  line-height: 56px;
-  width: 70%;
-  align-items: center;
-  justify-content: center;
-  display: inline-block;
-}
-div.section-content {
-  /* display: flex; */
-  justify-content: center;
-  display: inline-block;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 70%;
-}
+
 </style>

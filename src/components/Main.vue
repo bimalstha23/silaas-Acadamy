@@ -1,45 +1,43 @@
-<template>
-  <v-main class="mainmenu">
-    <v-container>
-      <v-row>
-        <v-col lg="5">
-          <div class="Main-text">
-            <h1 class="intro-text">
-              All-in-one business management <br />
-              software
-            </h1>
-            <p class="intro-subtext">
-              Tigg ERP is a cloud-based SaaS to manage your business securely
-              and remotely.
-            </p>
-            <h2 class="intro-question">Interested to know more about TIGG?</h2>
-            <p class="intro-contact">
-              Provide us your Detail and we will contact you.
-            </p>
-            <div class="intro-contactFrom">
-    <v-text-field
-      label="Enter Your Phone Number:"
-      :rules="rules"
-      hide-details="auto"
-    ></v-text-field>
-    <v-btn
-  elevation="2"
-  large color="success"
->SUBMIT</v-btn>   
-  </div>
+<template class= "landingpage">
+<v-main class="mainmenu">
+  <v-container >
+    <v-row>
+      <v-col lg="5" sm="7" xs="12" md="5">
+        <div class="Main-text">
+          <h1 class="intro-text">
+            All-in-one business management <br />
+            software
+          </h1>
+          <p class="intro-subtext">
+            Tigg ERP is a cloud-based SaaS to manage your business securely and
+            remotely.
+          </p>
+          <h2 class="intro-question">Interested to know more about TIGG?</h2>
+          <p class="intro-contact">
+            Provide us your Detail and we will contact you.
+          </p>
+          <div class="intro-contactFrom">
+            <v-text-field
+              label="Enter Your Phone Number:"
+              :rules="rules"
+              hide-details="auto"
+            ></v-text-field>
+            <v-btn elevation="2" large color="success">SUBMIT</v-btn>
           </div>
-        </v-col>
-        <v-col lg="7">
-          <v-img
+        </div>
+      </v-col>
+      <v-col lg="7" md="7" sm="7" xs="12">
+        <v-img
           class="homeImg"
-            max-height="500"
-            max-width="700"
-            src="../assets/ok.png"
-          ></v-img>
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-main>
+          max-height="500"
+          max-width="700"
+          src="../assets/ok.png"
+        ></v-img>
+      </v-col>
+    </v-row>
+  </v-container>
+      </v-main>
+
 </template>
 
 <script>
@@ -82,11 +80,14 @@ p.intro-contact {
   color: #ffb032;
   font-size: 12px;
 }
-div.intro-contactFrom{
+div.intro-contactFrom {
   display: inline-flex;
   align-content: left;
 }
 .homeImg {
   margin-top: 50px;
+}
+.landingpage {
+  background: rgba(50, 129, 255, 0.05);
 }
 </style>

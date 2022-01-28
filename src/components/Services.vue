@@ -1,11 +1,11 @@
 <template>
-<v-main>
+  <v-main>
     <v-container>
-        <v-row>
-            <v-col lg = "12">
-                <h1>All your business. <span> one place.</span></h1>
-            </v-col>
-            <!-- <v-co lg ="12">
+      <v-row>
+        <v-col lg="12">
+          <h1>All your business. <span> one place.</span></h1>
+        </v-col>
+        <!-- <v-co lg ="12">
                   <v-list class="d-flex align-center">
                 <v-list-item link @click="activeContainer = 'Workflow'" :color="activeContainer == 'Workflow'? 'success':''">
                  <v-list-item-title >Workflow</v-list-item-title>
@@ -36,37 +36,30 @@
                     </v-col>
                 </slot>
             </v-co> -->
-
-        </v-row>
+      </v-row>
     </v-container>
-
-</v-main>
-
-
+  </v-main>
 </template>
 
 <script>
-
-
 export default {
-  name: 'Services',
+  name: "Services",
 
-  data(){
-    return{
-    // activeContainer:'Workflow'
-        items: [
-            { title: "Workflow", route: "Workflow" },
-            { title: "Inventory", route: "Inventory" },
-            { title: "CRM", route: "CRM" },
-            { title: "Sales", route: "Sales" },
-            { title: "Purchase", route: "Purchase" },
-            { title: "Accounting", route: "Accounting" },
-            { title: "Reports", route: "Reports" },
-        ],
-        }
+  data() {
+    return {
+      // activeContainer:'Workflow'
+      items: [
+        { title: "Workflow", route: "Workflow" },
+        { title: "Inventory", route: "Inventory" },
+        { title: "CRM", route: "CRM" },
+        { title: "Sales", route: "Sales" },
+        { title: "Purchase", route: "Purchase" },
+        { title: "Accounting", route: "Accounting" },
+        { title: "Reports", route: "Reports" },
+      ],
+    };
   },
 };
 </script>
 <style scoped>
-
 </style>
