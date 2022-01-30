@@ -1,41 +1,135 @@
 <template>
   <v-main>
     <v-container>
-      <v-row>
+      <v-row justify="center">
         <v-col lg="12">
           <h1>All your business. <span> one place.</span></h1>
         </v-col>
-        <!-- <v-co lg ="12">
-                  <v-list class="d-flex align-center">
-                <v-list-item link @click="activeContainer = 'Workflow'" :color="activeContainer == 'Workflow'? 'success':''">
-                 <v-list-item-title >Workflow</v-list-item-title>
-                 </v-list-item>
-                 <v-list-item link @click="activeContainer = 'Inventory'" :color="activeContainer == 'Inventory'? 'success':''">
-                 <v-list-item-title >Inventory</v-list-item-title>
-                 </v-list-item>
-                 <v-list-item link @click="activeContainer = 'CRM'" :color="activeContainer == 'CRM'? 'success':''">
-                 <v-list-item-title >CRM</v-list-item-title>
-                 </v-list-item>
-                 <v-list-item link @click="activeContainer = 'Sales'" :color="activeContainer == 'Sales'? 'success':''">
-                 <v-list-item-title >Sales</v-list-item-title>
-                 </v-list-item>
-                 <v-list-item link @click="activeContainer = 'Purchase'" :color="activeContainer == 'Purchase'? 'success':''">
-                 <v-list-item-title >Purchase</v-list-item-title>
-                 </v-list-item>
-                 <v-list-item link @click="activeContainer = 'Accounting'" :color="activeContainer == 'Accounting'? 'success':''">
-                 <v-list-item-title >Accounting</v-list-item-title>
-                 </v-list-item>
-                 <v-list-item link @click="activeContainer = 'Reports'" :color="activeContainer == 'Reports'? 'success':''">
-                 <v-list-item-title >Reports</v-list-item-title>
-                 </v-list-item>
-                  </v-list>
-                <slot v-if="activeContainer == 'Workflow'">
-                    <v-col lg="12">
-                        <h1>Workflow</h1>
-                        <p>Click a photo of your receipts andhave them updated in the system</p>
-                    </v-col>
-                </slot>
-            </v-co> -->
+        <v-col md="12">
+          <div>
+            <v-tabs centered>
+              <v-tab @click="activeContainer = 'Workflow'">WorkFlow</v-tab>
+              <v-tab @click="activeContainer = 'Inventory'">invetory</v-tab>
+              <v-tab @click="activeContainer = 'CRM'">CRM</v-tab>
+              <v-tab @click="activeContainer = 'Sales'">Sales</v-tab>
+              <v-tab @click="activeContainer = 'Purchase'">Purchase</v-tab>
+              <v-tab @click="activeContainer = 'Accounting'">Accounting</v-tab>
+              <v-tab @click="activeContainer = 'Reports'">Reports</v-tab>
+            </v-tabs>
+          </div>
+        </v-col>
+        <slot v-if="activeContainer == 'Workflow'">
+          <v-col md="5">
+            <h1>Workflow</h1>
+            <p>
+              Click a photo of your receipts andhave them updated in the system
+            </p>
+          </v-col>
+          <v-col md=" 7">
+            <v-img
+              class="homeImg"
+              max-height="400"
+              max-width="600"
+              src="../assets/ok.png"
+            ></v-img>
+          </v-col>
+        </slot>
+        <slot v-if="activeContainer == 'Inventory'">
+          <v-col md="5">
+            <h1>Inventory</h1>
+            <p>
+              Click a photo of your receipts andhave them updated in the system
+            </p>
+          </v-col>
+          <v-col md=" 7">
+            <v-img
+              class="homeImg"
+              max-height="400"
+              max-width="600"
+              src="../assets/ok.png"
+            ></v-img>
+          </v-col>
+        </slot>
+        <slot v-if="activeContainer == 'CRM'">
+          <v-col md="5">
+            <h1>CRM</h1>
+            <p>
+              Click a photo of your receipts andhave them updated in the system
+            </p>
+          </v-col>
+          <v-col md=" 7">
+            <v-img
+              class="homeImg"
+              max-height="400"
+              max-width="600"
+              src="../assets/ok.png"
+            ></v-img>
+          </v-col>
+        </slot>
+        <slot v-if="activeContainer == 'Sales'">
+          <v-col md="5">
+            <h1>Sales</h1>
+            <p>
+              Click a photo of your receipts andhave them updated in the system
+            </p>
+          </v-col>
+          <v-col md=" 7">
+            <v-img
+              class="homeImg"
+              max-height="400"
+              max-width="600"
+              src="../assets/ok.png"
+            ></v-img>
+          </v-col>
+        </slot>
+        <slot v-if="activeContainer == 'Purchase'">
+          <v-col md="5">
+            <h1>Purchase</h1>
+            <p>
+              Click a photo of your receipts andhave them updated in the system
+            </p>
+          </v-col>
+          <v-col md=" 7">
+            <v-img
+              class="homeImg"
+              max-height="400"
+              max-width="600"
+              src="../assets/ok.png"
+            ></v-img>
+          </v-col>
+        </slot>
+        <slot v-if="activeContainer == 'Accounting'">
+          <v-col md="5">
+            <h1>Accounting</h1>
+            <p>
+              Click a photo of your receipts andhave them updated in the system
+            </p>
+          </v-col>
+          <v-col md=" 7">
+            <v-img
+              class="homeImg"
+              max-height="400"
+              max-width="600"
+              src="../assets/ok.png"
+            ></v-img>
+          </v-col>
+        </slot>
+        <slot v-if="activeContainer == 'Reports'">
+          <v-col md="5">
+            <h1>Reports</h1>
+            <p>
+              Click a photo of your receipts andhave them updated in the system
+            </p>
+          </v-col>
+          <v-col md=" 7">
+            <v-img
+              class="homeImg"
+              max-height="400"
+              max-width="600"
+              src="../assets/ok.png"
+            ></v-img>
+          </v-col>
+        </slot>
       </v-row>
     </v-container>
   </v-main>
@@ -47,16 +141,7 @@ export default {
 
   data() {
     return {
-      // activeContainer:'Workflow'
-      items: [
-        { title: "Workflow", route: "Workflow" },
-        { title: "Inventory", route: "Inventory" },
-        { title: "CRM", route: "CRM" },
-        { title: "Sales", route: "Sales" },
-        { title: "Purchase", route: "Purchase" },
-        { title: "Accounting", route: "Accounting" },
-        { title: "Reports", route: "Reports" },
-      ],
+      activeContainer: "Workflow",
     };
   },
 };

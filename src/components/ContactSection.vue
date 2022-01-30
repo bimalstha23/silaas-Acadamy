@@ -25,7 +25,7 @@ export default {
 </script>
 <style scoped>
 h1.contactSection-title{
-    margin-top: 50px;
+  margin-top: 50px;
   font-size: 50px;
   font-weight: 600;
   line-height: 56px;

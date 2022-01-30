@@ -10,6 +10,7 @@
       <AppSection />
       <ContactSection />
       <FooterSection />
+      <Logo/>
     </v-main>
   </v-app>
 </template>
@@ -24,6 +25,7 @@ import FeaturesSection from "./components/FeaturesSection.vue";
 import AppSection from "./components/AppSection.vue";
 import ContactSection from "./components/ContactSection.vue";
 import FooterSection from "./components/FooterSec.vue";
+import Logo from "./components/Logo.vue";
 export default {
   components: {
     Header,
@@ -35,6 +37,7 @@ export default {
     AppSection,
     ContactSection,
     FooterSection,
+    Logo,
   },
   name: "App",
 };
