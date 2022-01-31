@@ -1,28 +1,59 @@
 <template>
-  <v-app-bar
-    class="navbar"
-    style="padding: 0px 100px"
-    app
-    color="white"
-    light
-    elevation="3"
-    elevate-on-scroll
-  >
-    <v-toolbar-title> SILAAS ACADAMY </v-toolbar-title>
-    <v-spacer />
-    <v-list class="d-flex align-center">
-      <v-list-item
-        link
-        v-for="(menu, index) in menus"
-        :key="index"
-        :to="menu.route"
-      >
-        <v-list-item-title>{{ menu.title }}</v-list-item-title>
-      </v-list-item>
-      <v-spacer />
-      <v-btn large color="success" dark> GET STARTED </v-btn>
-    </v-list>
-  </v-app-bar>
+  <header :class="{ 'scrolled-nav': scrolledNav }">
+    <nav>
+      <div class="logo">
+        <v-img class="img" src="../assets/playstore.png"></v-img>
+        <ul v-show="!mobile" class="navigation">
+          <li>
+            <router-link class="link" to="{name:'Features'}"
+              >Features</router-link
+            >
+          </li>
+          <li>
+            <router-link class="link" to="{name:''}">Pricing</router-link>
+          </li>
+
+          <li>
+            <router-link class="link" to="{name:''}">Partners</router-link>
+          </li>
+
+          <li>
+            <router-link class="link" to="{name:''}">Resources</router-link>
+          </li>
+        </ul>
+        <div class="icon">
+          <v-icon
+            class="navIcon"
+            @click="toggleMobileNav"
+            v-show="mobile"
+            :class="{ 'icon-active': mobileNav }"
+          >
+            mdi-facebook
+          </v-icon>
+        </div>
+        <transition name="mobile-nav">
+          <ul v-show="mobileNav" class="dropdown-Nav">
+            <li>
+              <router-link class="link" to="{name:'Features'}"
+                >Features</router-link
+              >
+            </li>
+            <li>
+              <router-link class="link" to="{name:''}">Pricing</router-link>
+            </li>
+
+            <li>
+              <router-link class="link" to="{name:''}">Partners</router-link>
+            </li>
+
+            <li>
+              <router-link class="link" to="{name:''}">Resources</router-link>
+            </li>
+          </ul>
+        </transition>
+      </div>
+    </nav>
+  </header>
 </template>
 
 <script>
@@ -31,15 +62,146 @@ export default {
 
   data() {
     return {
-      menus: [
-        { title: "Features", route: "Feature" },
-        { title: "Pricing", route: "Pricing" },
-        { title: "Partners", route: "Partners" },
-        { title: "Resources", route: "Resources" },
-      ],
+      scrolledNav: null,
+      mobile: null,
+      mobileNav: null,
+      windowWidth: null,
     };
+  },
+
+  created() {
+    window.addEventListener("resize", this.checkScreen);
+    this.checkScreen();
+  },
+  mounted() {
+    window.addEventListener("scroll", this.updateScroll);
+    this.updateScroll();
+  },
+  methods: {
+    toggleMobileNav() {
+      this.mobileNav = !this.mobileNav;
+    },
+    updateScroll() {
+      const scrollPosition = Window.scrollY;
+      if (scrollPosition > 50) {
+        this.scrolledNav = true;
+        return;
+      }
+      this.scrolledNav = false;
+      return;
+    },
+    checkScreen() {
+      this.windowWidth = window.innerWidth;
+      if (this.windowWidth <= 750) {
+        this.mobile = true;
+        return;
+      }
+      this.mobile = false;
+      this.mobileNav = false;
+      return;
+    },
   },
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
+header {
+  background: rgba(50, 129, 255, 0.05);
+  z-index: 99;
+  width: 100%;
+  position: fixed;
+  transition: 0.5 ease all;
+  nav {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 12px 0;
+    transition: 0.5s ease all;
+    width: 90%;
+    margin: 0 auto;
+    @media (min-width: 1140px) {
+      max-width: 1140px;
+    }
+    ul,
+    .link {
+      font-weight: 500px;
+      list-style: none;
+      text-decoration: none;
+    }
+    li {
+      cursor: pointer;
+      text-transform: uppercase;
+      padding: 16px;
+      margin-left: 16px;
+    }
+    .link {
+      font-size: 14px;
+      transition: 0.5s ease all;
+      padding: 4px;
+      border-bottom: 1px solid transparent;
+      &:hover {
+        color: #ffb032;
+        border-color: #ffb032;
+      }
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      .img {
+        width: 50px;
+        transition: 0.5s ease all;
+      }
+    }
+    .navigation {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      justify-content: flex-end;
+    }
+    .icon {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      right: 24px;
+      height: 100%;
+      .navIcon {
+        cursor: pointer;
+        transition: 0.8s ease all;
+      }
+    }
+    .icon-active {
+      transform: rotate(180deg);
+    }
+    .dropdown-Nav {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      width: 100%;
+      max-width: 250px;
+      height: 100%;
+      background-color: white;
+      top: 0;
+      left: 0;
+
+      li {
+        margin: 0;
+        .link {
+          color: black;
+        }
+      }
+    }
+  }
+}
+.scrolled-nav {
+  background-color: crimson;
+  box-shadow: 0px 4px 20px rgb(0 0 0 / 10%);
+  nav {
+    padding: 8px 0;
+    .logo {
+      .img {
+        width: 40px;
+      }
+    }
+  }
+}
 </style>

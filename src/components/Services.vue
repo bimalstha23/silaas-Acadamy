@@ -3,7 +3,7 @@
     <v-container>
       <v-row justify="center">
         <v-col lg="12">
-          <h1>All your business. <span> one place.</span></h1>
+          <h1 class="section-title">All your business. <span class="second-text"> one place.</span></h1>
         </v-col>
         <v-col md="12">
           <div>
@@ -147,4 +147,15 @@ export default {
 };
 </script>
 <style scoped>
+.second-text {
+  color: #ffc107;
+}
+h1.section-title {
+  font-size: 30px;
+
+}
+h1{
+  font-size: 30px;
+}
+
 </style>

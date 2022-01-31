@@ -1,9 +1,10 @@
 <template>
-  <v-container class="appSection">
+  <v-container >
+    <div class="appSection">
     <v-row>
       <v-col lg="6">
         <div class="title">
-          <h1>Be Updated on the go</h1>
+          <h1 class="appSection-title">Be Updated on the go</h1>
           <h1 class= " appSection-subtitle">With our mobile app</h1>
           <v-img
           class="playstore"
@@ -22,6 +23,7 @@
         ></v-img>
       </v-col>
     </v-row>
+    </div>
   </v-container>
 </template>
 
@@ -32,7 +34,7 @@ export default {
 </script>
 <style scoped>
 .appSection{
-  margin-top: 70px;
+  margin-top:0px;
 }
 h1.appSection-subtitle{
   padding-top: 20px;
@@ -51,5 +53,16 @@ h1.appSection-subtitle{
   justify-content: center;
   width: 100%;
   left: 30%;
+}
+@media only screen and (max-width: 600px) {
+h1.appSection-title{
+  font-size: 30px;
+}
+h1.appSection-subtitle{
+  font-size: 30px;
+}
+.playstore{
+  left: 15%;
+}
 }
 </style>

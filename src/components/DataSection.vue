@@ -85,4 +85,10 @@ export default {
   padding-left: 10px;
   padding-right: 10px;
 }
+ @media only screen and (max-width: 600px) {
+.data-cards{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+}
 </style>

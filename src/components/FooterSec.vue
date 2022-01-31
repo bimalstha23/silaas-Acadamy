@@ -1,21 +1,24 @@
 <template>
   <v-container>
     <v-row>
-      <v-col md="2.4">
+      <v-col md="2.4" >
         <h4>Talk to Sales</h4>
-        <div class="contact">
+        <br>
+        <div class="contact text-center">
           <v-icon>mdi-email </v-icon>
-          <a href="mailto: academy.silaas@gmail.com"
+          <a  class="link" href="mailto: academy.silaas@gmail.com"
             >academy.silaas@gmail.com</a
           >
         </div>
-        <div class="contact">
+        <br>
+        <div class="contact text-center"  >
           <v-icon> mdi-phone </v-icon>
-          <a href="tel:+977-9863696695"> 9863696695</a>
+          <a class= "link" href="tel:+977-9863696695"> 9863696695</a>
         </div>
-        <div class="contact">
+        <br>
+        <div class="contact text-center">
           <v-icon> mdi-phone </v-icon>
-          <a href="tel:+977-9863696695"> 9840000245</a>
+          <a class="link" href="tel:+977-9863696695"> 9840000245</a>
         </div>
       </v-col>
       <v-col md="2.4">
@@ -44,7 +47,7 @@
       </v-list-item>
       </v-list>
       </v-col>
-      <v-col md="2.4">
+      <v-col md="2.4"  sm="4">
         <h4>Company</h4>
               <v-list>
         <v-list-item
@@ -111,5 +114,12 @@ export default {
 .contact {
   display: flex;
   margin-bottom: 10px;
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+}
+.link{
+  text-decoration: none;
+  text-align: center;
 }
 </style>

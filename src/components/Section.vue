@@ -40,4 +40,11 @@ div.section-content {
   margin-right: auto;
   width: 70%;
 }
+ @media only screen and (max-width: 600px) {
+ h1.section-title {
+    font-size: 25px;
+    width: 100%;
+    line-height: 40px;
+ }
+ }
 </style>
