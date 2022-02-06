@@ -9,6 +9,9 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "firebase": "^9.6.6",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.17.1",
     "vee-validate": "^3.4.14",
     "vue": "^2.6.11",
     "vuetify": "^2.4.0"

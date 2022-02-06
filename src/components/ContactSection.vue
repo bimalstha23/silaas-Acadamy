@@ -104,13 +104,13 @@
                       <v-col cols="12">
                         <validation-provider
                           v-slot="{ errors }"
-                          name="Name"
+                          name="Messege"
                           rules="required|max:10"
                         >
                           <v-text-field
                             v-model="messege"
                             :counter="500"
-                            :error-messages="errors"
+                            :error-messeges="errors"
                             label="Messege*"
                             required
                           >
@@ -144,6 +144,7 @@
 </template>
 
 <script>
+import {db} from '../firebase';
 import { required, digits, email, max, regex } from "vee-validate/dist/rules";
 import {
   extend,
@@ -186,9 +187,30 @@ export default {
   },
 
   name: "ContactSection",
-  data: () => ({
+  data (){
+    return{
     dialog: false,
-  }),
+    messege:{
+
+    }
+    }
+  },
+  methods:{
+    Submit(event) {
+                event.preventDefault()
+                db.collection('messeges').add(this.messege).then(() => {
+                    alert("msg sent successfully!");
+                    this.name = ''
+                    this.middleName = ''
+                    this.lastName = ''
+                    this.phoneNumber = ''
+                    this.email = ''
+                    this.messege = ''
+                }).catch((error) => {
+                    console.log(error);
+                });
+            }
+        }
 };
 </script>
 <style scoped>
