@@ -16,14 +16,7 @@
           <p class="intro-contact">
             Provide us your Detail and we will contact you.
           </p>
-          <div class="intro-contactFrom">
-            <v-text-field
-              label="Enter Your Phone Number:"
-              :rules="rules"
-              hide-details="auto"
-            ></v-text-field>
-            <v-btn elevation="2" large color="success">SUBMIT</v-btn>
-          </div>
+      
         </div>
       </v-col>
       <v-col lg="7" md="7" sm="7" xs="12">

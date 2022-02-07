@@ -28,8 +28,8 @@
             v-show="mobile"
             :class="{ 'icon-active': mobileNav }"
           >
-            mdi-facebook
-          </v-icon>
+          mdi-menu  
+        </v-icon>
         </div>
         <transition name="mobile-nav">
           <ul v-show="mobileNav" class="dropdown-Nav">
@@ -193,7 +193,6 @@ header {
   }
 }
 .scrolled-nav {
-  background-color: crimson;
   box-shadow: 0px 4px 20px rgb(0 0 0 / 10%);
   nav {
     padding: 8px 0;

@@ -130,7 +130,7 @@
 
 <script>
 export default {
-  name: "DataSection",
+  name: "FeatureSection",
 
   data() {
     return {};

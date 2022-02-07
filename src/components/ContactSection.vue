@@ -16,7 +16,7 @@
           </v-btn>
         </template>
         <validation-observer ref="observer" v-slot="{}">
-          <form @submit.prevent="Submit">
+          <form @submit.prevent = 'test'>
             <v-card>
               <v-card-title>
                 <span class="text-h5">Help our Team to reach you</span>
@@ -32,7 +32,7 @@
                           rules="required|max:10"
                         >
                           <v-text-field
-                            v-model="name"
+                            v-model="message.name"
                             :counter="10"
                             :error-messages="errors"
                             label=" First name*"
@@ -46,7 +46,7 @@
                           name="middleName"
                         >
                           <v-text-field
-                            v-model="middleName"
+                            v-model="message.middleName"
                             :counter="10"
                             :error-messages="errors"
                             label="Middle name"
@@ -60,7 +60,7 @@
                           rules="required|max:10"
                         >
                           <v-text-field
-                            v-model="lastName"
+                            v-model="message.lastName"
                             :counter="10"
                             :error-messages="errors"
                             label="Last name*"
@@ -78,7 +78,7 @@
                           }"
                         >
                           <v-text-field
-                            v-model="phoneNumber"
+                            v-model="message.phoneNumber"
                             :counter="10"
                             :error-messages="errors"
                             label="Phone Number*"
@@ -93,7 +93,7 @@
                           rules="required|email"
                         >
                           <v-text-field
-                            v-model="email"
+                            v-model="message.email"
                             :counter="30"
                             :error-messages="errors"
                             label="Email*"
@@ -104,14 +104,14 @@
                       <v-col cols="12">
                         <validation-provider
                           v-slot="{ errors }"
-                          name="Name"
+                          name="Message"
                           rules="required|max:10"
                         >
                           <v-text-field
-                            v-model="messege"
+                            v-model="message.messege"
                             :counter="500"
                             :error-messages="errors"
-                            label="Messege*"
+                            label="Message*"
                             required
                           >
                           </v-text-field>
@@ -144,6 +144,7 @@
 </template>
 
 <script>
+// import {db} from '../firebase';
 import { required, digits, email, max, regex } from "vee-validate/dist/rules";
 import {
   extend,
@@ -186,9 +187,41 @@ export default {
   },
 
   name: "ContactSection",
-  data: () => ({
+  data(){
+    return{
     dialog: false,
-  }),
+    message:{
+      name:'',
+      middleName:'',
+      lastName:'',
+      email:'',
+      phoneNumber:'',
+      message:'',
+    },
+    }
+  },
+  methods:{ 
+     test:(e)=>{
+       e.preventDefault()
+       alert("Message Sent Successfully");
+    },
+    // Submit: (event)=>{
+    //             event.preventDefault()
+    //             alert("Message Sent Successfully");
+    //             db.collection('messages').add(this.message).then(() => {
+    //                 alert("Message Sent Successfully");
+                  
+    //                 this.message.name = ''
+    //                 this.message.middleName = ''
+    //                 this.message.lastName = ''
+    //                 this.message.email = ''
+    //                 this.message.phoneNumber = ''
+    //                 this.message.message = ''
+    //             }).catch((error) => {
+    //                 console.log(error);
+    //             });
+    //         }
+}
 };
 </script>
 <style scoped>
