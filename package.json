@@ -15,6 +15,7 @@
     "vee-validate": "^3.4.14",
     "vue": "^2.6.11",
     "vue-router": "^4.0.12",
+    "vuefire": "^2.2.5",
     "vuetify": "^2.4.0"
   },
   "devDependencies": {

@@ -11,12 +11,18 @@
     <v-row justify="center">
       <v-dialog v-model="dialog" persistent max-width="600px">
         <template v-slot:activator="{ on, attrs }">
-          <v-btn class="getStartedbtn" color="primary" dark v-bind="attrs" v-on="on">
+          <v-btn
+            class="getStartedbtn"
+            color="primary"
+            dark
+            v-bind="attrs"
+            v-on="on"
+          >
             GET STARTED
           </v-btn>
         </template>
         <validation-observer ref="observer" v-slot="{}">
-          <form @submit.prevent = 'test'>
+          <v-form v-on:submit.prevent="Submit">
             <v-card>
               <v-card-title>
                 <span class="text-h5">Help our Team to reach you</span>
@@ -32,6 +38,7 @@
                           rules="required|max:10"
                         >
                           <v-text-field
+                            value="test"
                             v-model="message.name"
                             :counter="10"
                             :error-messages="errors"
@@ -124,19 +131,15 @@
               </v-card-text>
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn
-            color="blue darken-1"
-            text
-            @click="dialog = false"
-          >
-            Close
-          </v-btn>
                 <v-btn color="blue darken-1" text @click="dialog = false">
+                  Close
+                </v-btn>
+                <v-btn color="blue darken-1" text v-on:click="Submit">
                   SEND
                 </v-btn>
               </v-card-actions>
             </v-card>
-          </form>
+          </v-form>
         </validation-observer>
       </v-dialog>
     </v-row>
@@ -144,7 +147,7 @@
 </template>
 
 <script>
-// import {db} from '../firebase';
+import db from "../firebase";
 import { required, digits, email, max, regex } from "vee-validate/dist/rules";
 import {
   extend,
@@ -187,41 +190,42 @@ export default {
   },
 
   name: "ContactSection",
-  data(){
-    return{
-    dialog: false,
-    message:{
-      name:'',
-      middleName:'',
-      lastName:'',
-      email:'',
-      phoneNumber:'',
-      message:'',
-    },
-    }
+  data() {
+    return {
+      dialog: false,
+      message: {
+        name: "",
+        middleName: "",
+        lastName: "",
+        email: "",
+        phoneNumber: "",
+        message: "",
+      },
+    };
   },
-  methods:{ 
-     test:(e)=>{
-       e.preventDefault()
-       alert("Message Sent Successfully");
+  methods: {
+    test: function () {
+      alert(this.message.name);
+      console.log("hello word");
     },
-    // Submit: (event)=>{
-    //             event.preventDefault()
-    //             alert("Message Sent Successfully");
-    //             db.collection('messages').add(this.message).then(() => {
-    //                 alert("Message Sent Successfully");
-                  
-    //                 this.message.name = ''
-    //                 this.message.middleName = ''
-    //                 this.message.lastName = ''
-    //                 this.message.email = ''
-    //                 this.message.phoneNumber = ''
-    //                 this.message.message = ''
-    //             }).catch((error) => {
-    //                 console.log(error);
-    //             });
-    //         }
-}
+    Submit: () => {
+      alert("Message Sent Successfully");
+      db.collection("messages")
+        .add(this.message)
+        .then(() => {
+          alert("Message Sent Successfully");
+          this.message.name = "";
+          this.message.middleName = "";
+          this.message.lastName = "";
+          this.message.email = "";
+          this.message.phoneNumber = "";
+          this.message.message = "";
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
 };
 </script>
 <style scoped>
@@ -257,7 +261,7 @@ div.intro-contactFrom {
   h2.contactSection-subTitle {
     font-size: 25px;
   }
-  .getStartedbtn{
+  .getStartedbtn {
     margin-bottom: 50px;
   }
 }
