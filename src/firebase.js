@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, } from 'firebase/firestore/lite';
+import { getFirestore,addDoc,collection } from 'firebase/firestore/lite';
 const firebaseConfig = {
     apiKey: "AIzaSyDK9i1Wm4M7-gWeVXi7NYD7N-c4NWtmKsY",
   authDomain: "silaas-acadamy.firebaseapp.com",
@@ -10,4 +10,7 @@ const firebaseConfig = {
   measurementId: "G-5BV04RJR82"
 };
 const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);
+const db = getFirestore(app);
+export {db}
+export {addDoc}
+export {collection}

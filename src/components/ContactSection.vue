@@ -147,7 +147,9 @@
 </template>
 
 <script>
-import db from "../firebase";
+import {db} from "../firebase";
+import {addDoc} from "../firebase";
+import {collection} from "../firebase";
 import { required, digits, email, max, regex } from "vee-validate/dist/rules";
 import {
   extend,
@@ -194,12 +196,12 @@ export default {
     return {
       dialog: false,
       message: {
-        name: "",
-        middleName: "",
-        lastName: "",
-        email: "",
-        phoneNumber: "",
-        message: "",
+        // name: "",
+        // middleName: "",
+        // lastName: "",
+        // email: "",
+        // phoneNumber: "",
+        // message: "",
       },
     };
   },
@@ -209,9 +211,8 @@ export default {
       console.log("hello word");
     },
     Submit: () => {
-      alert("Message Sent Successfully");
-      db.collection("messages")
-        .add(this.message)
+      const q = collection(db, 'messages')
+      addDoc(q, this.message)
         .then(() => {
           alert("Message Sent Successfully");
           this.message.name = "";
