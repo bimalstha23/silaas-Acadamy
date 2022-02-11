@@ -1,59 +1,5 @@
 <template>
-  <header :class="{ 'scrolled-nav': scrolledNav }">
-    <nav>
-      <div class="logo">
-        <v-img class="img" src="../assets/playstore.png"></v-img>
-        <ul v-show="!mobile" class="navigation">
-          <li>
-            <router-link class="link" to="{name:'Features'}"
-              >Features</router-link
-            >
-          </li>
-          <li>
-            <router-link class="link" to="{name:''}">Pricing</router-link>
-          </li>
-
-          <li>
-            <router-link class="link" to="{name:''}">Partners</router-link>
-          </li>
-
-          <li>
-            <router-link class="link" to="{name:''}">Resources</router-link>
-          </li>
-        </ul>
-        <div class="icon">
-          <v-icon
-            class="navIcon"
-            @click="toggleMobileNav"
-            v-show="mobile"
-            :class="{ 'icon-active': mobileNav }"
-          >
-          mdi-menu  
-        </v-icon>
-        </div>
-        <transition name="mobile-nav">
-          <ul v-show="mobileNav" class="dropdown-Nav">
-            <li>
-              <router-link class="link" to="{name:'Features'}"
-                >Features</router-link
-              >
-            </li>
-            <li>
-              <router-link class="link" to="{name:''}">Pricing</router-link>
-            </li>
-
-            <li>
-              <router-link class="link" to="{name:''}">Partners</router-link>
-            </li>
-
-            <li>
-              <router-link class="link" to="{name:''}">Resources</router-link>
-            </li>
-          </ul>
-        </transition>
-      </div>
-    </nav>
-  </header>
+  
 </template>
 
 <script>
@@ -69,11 +15,11 @@ export default {
     };
   },
 
-  created() {
+created() {
     window.addEventListener("resize", this.checkScreen);
     this.checkScreen();
   },
-  mounted() {
+mounted() {
     window.addEventListener("scroll", this.updateScroll);
     this.updateScroll();
   },

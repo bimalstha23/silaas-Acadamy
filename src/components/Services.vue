@@ -1,6 +1,6 @@
 <template>
   <v-main>
-    <v-container>
+    <v-container class="container">
       <v-row justify="center">
         <v-col lg="12">
           <h1 class="section-title">All your business. <span class="second-text"> one place.</span></h1>
@@ -147,6 +147,9 @@ export default {
 };
 </script>
 <style scoped>
+.container{
+  padding-top:80px;
+}
 .second-text {
   color: #ffc107;
 }

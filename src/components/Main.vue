@@ -2,7 +2,7 @@
 <v-main class="mainmenu">
   <v-container class="container">
     <v-row>
-      <v-col lg="5" sm="7" xs="12" md="5">
+      <v-col lg="5" sm="5" xs="12" md="5">
         <div class="Main-text">
           <h1 class="intro-text">
             All-in-one business management <br />
@@ -93,7 +93,7 @@ div.intro-contactFrom {
   margin-top: 100px;
   padding-bottom: 50px;
 }
- @media only screen and (max-width: 600px) {
+ @media only screen and (max-width:600px) {
   h1.intro-text {
     font-size: 30px;
     line-height: 40px;
@@ -108,6 +108,12 @@ div.intro-contactFrom {
   }
   .homeImg {
     margin-top: 0px;
+  }
+  @media only screen and (max-width:900px){
+    h1.intro-text{
+    font-size: 30px;
+    line-height: 40px;
+    }
   }
 }
 </style>

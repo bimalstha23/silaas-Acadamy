@@ -21,15 +21,17 @@
             GET STARTED
           </v-btn>
         </template>
-        <validation-observer ref="observer" v-slot="{}">
-          <v-form v-on:submit.prevent="Submit">
+        <validation-observer ref="observer" v-slot="{valid}">
+          <v-form
+            lazy-validation
+            v-on:submit.prevent="Submit"
+          >
             <v-card>
               <v-card-title>
                 <span class="text-h5">Help our Team to reach you</span>
               </v-card-title>
               <v-card-text>
                 <v-container>
-                  <validation-observer ref="observer" v-slot="{}">
                     <v-row>
                       <v-col cols="12" sm="6" md="4">
                         <validation-provider
@@ -82,6 +84,7 @@
                           :rules="{
                             required: true,
                             digits: 10,
+                            regex: '9[678][0-9]{7}',
                           }"
                         >
                           <v-text-field
@@ -112,10 +115,10 @@
                         <validation-provider
                           v-slot="{ errors }"
                           name="Message"
-                          rules="required|max:10"
+                          rules="required|max:500"
                         >
                           <v-text-field
-                            v-model="message.messege"
+                            v-model="message.message"
                             :counter="500"
                             :error-messages="errors"
                             label="Message*"
@@ -125,7 +128,6 @@
                         </validation-provider>
                       </v-col>
                     </v-row>
-                  </validation-observer>
                 </v-container>
                 <small>*indicates required field</small>
               </v-card-text>
@@ -134,9 +136,16 @@
                 <v-btn color="blue darken-1" text @click="dialog = false">
                   Close
                 </v-btn>
-                <v-btn color="blue darken-1" text v-on:click="Submit">
+
+                <v-btn
+                  type="submit"
+                  :disabled="!valid"
+                  color="blue darken-1"
+                  text
+                >
                   SEND
                 </v-btn>
+
               </v-card-actions>
             </v-card>
           </v-form>
@@ -147,9 +156,7 @@
 </template>
 
 <script>
-import {db} from "../firebase";
-import {addDoc} from "../firebase";
-import {collection} from "../firebase";
+import { db, addDoc, collection } from "../firebase";
 import { required, digits, email, max, regex } from "vee-validate/dist/rules";
 import {
   extend,
@@ -195,26 +202,28 @@ export default {
   data() {
     return {
       dialog: false,
+      valid:true,
       message: {
-        // name: "",
-        // middleName: "",
-        // lastName: "",
-        // email: "",
-        // phoneNumber: "",
-        // message: "",
+        name: "",
+        middleName: "",
+        lastName: "",
+        email: "",
+        phoneNumber: "",
+        message: "",
       },
     };
   },
   methods: {
-    test: function () {
-      alert(this.message.name);
-      console.log("hello word");
-    },
-    Submit: () => {
-      const q = collection(db, 'messages')
-      addDoc(q, this.message)
+    Submit: function () {
+      this.$refs.observer.validate();
+      console.log(this.message);
+      const q = collection(db, "messages");
+      console.log(q);
+      addDoc(q,{...this.message})
         .then(() => {
-          alert("Message Sent Successfully");
+          alert(
+            this.message.name + ", your Message has been Sent Successfully"
+          );
           this.message.name = "";
           this.message.middleName = "";
           this.message.lastName = "";
@@ -225,6 +234,7 @@ export default {
         .catch((error) => {
           console.log(error);
         });
+      this.dialog = false;
     },
   },
 };
