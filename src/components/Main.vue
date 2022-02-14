@@ -101,7 +101,7 @@ div.intro-contactFrom {
 
   }
   .container {
-    margin-top: 0px;
+    margin-top: 40px;
   }
   p.intro-subtext{
     margin-top: 0px
