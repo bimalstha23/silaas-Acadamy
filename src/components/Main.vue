@@ -1,36 +1,35 @@
 <template class= "landingpage">
-<v-main class="mainmenu">
-  <v-container class="container">
-    <v-row>
-      <v-col lg="5" sm="5" xs="12" md="5">
-        <div class="Main-text">
-          <h1 class="intro-text">
-            All-in-one business management <br />
-            software
-          </h1>
-          <p class="intro-subtext">
-            Tigg ERP is a cloud-based SaaS to manage your business securely and
-            remotely.
-          </p>
-          <h2 class="intro-question">Interested to know more about TIGG?</h2>
-          <p class="intro-contact">
-            Provide us your Detail and we will contact you.
-          </p>
-      
-        </div>
-      </v-col>
-      <v-col lg="7" md="7" sm="7" xs="12">
-        <v-img
-          class="homeImg"
-          max-height="500"
-          max-width="700"
-          src="../assets/ok.png"
-        ></v-img>
-      </v-col>
-    </v-row>
-  </v-container>
-      </v-main>
-
+  <v-main class="mainmenu">
+    <v-container class="container">
+      <v-row>
+        <v-col lg="4" sm="4" xs="12" md="5">
+          <div class="Main-text">
+            <h1 class="intro-text">
+              Your all-in-one learning <br />
+              experience
+            </h1>
+            <p class="intro-subtext">
+              Silaas Academy is an aggregated learning platform. Connect with us
+              and experience education like never before.
+            </p>
+            <h2 class="intro-question">Enthusiastic about our product ?</h2>
+            <p class="intro-contact">
+              Provide us your details and we will contact you.
+            </p>
+          </div>
+        </v-col>
+        <v-spacer></v-spacer>
+        <v-col lg="7" md="7" sm="7" xs="12">
+          <v-img
+            class="homeImg"
+            max-height="500"
+            max-width="700"
+            src="../assets/ok.png"
+          ></v-img>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-main>
 </template>
 
 <script>
@@ -86,33 +85,31 @@ div.intro-contactFrom {
   margin-top: 100px;
 }
 .landingpage {
-
   background: rgba(50, 129, 255, 0.05);
 }
-.container{
+.container {
   margin-top: 100px;
   padding-bottom: 50px;
 }
- @media only screen and (max-width:600px) {
+@media only screen and (max-width: 600px) {
   h1.intro-text {
     font-size: 30px;
     line-height: 40px;
-    margin-bottom:0px;
-
+    margin-bottom: 0px;
   }
   .container {
     margin-top: 40px;
   }
-  p.intro-subtext{
-    margin-top: 0px
+  p.intro-subtext {
+    margin-top: 0px;
   }
   .homeImg {
     margin-top: 0px;
   }
-  @media only screen and (max-width:900px){
-    h1.intro-text{
-    font-size: 30px;
-    line-height: 40px;
+  @media only screen and (max-width: 900px) {
+    h1.intro-text {
+      font-size: 30px;
+      line-height: 40px;
     }
   }
 }

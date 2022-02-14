@@ -48,7 +48,9 @@
               </li>
 
               <li>
-                <a v-scroll-to="'#contactUs'" class="link" href="#">Contact Us</a>
+                <a v-scroll-to="'#contactUs'" class="link" href="#"
+                  >Contact Us</a
+                >
               </li>
             </ul>
           </transition>
@@ -115,13 +117,12 @@ export default {
     toggleMobileNav() {
       this.mobileNav = !this.mobileNav;
     },
-  
-    updateScroll:function() {
+
+    updateScroll: function () {
       const scrollPosition = window.scrollY;
       if (scrollPosition > 50) {
         this.scrolledNav = true;
         return;
-      
       }
       this.scrolledNav = false;
       return;
@@ -150,7 +151,7 @@ export default {
   scroll-behavior: smooth;
 }
 header {
-  background:white;
+  background: white;
   z-index: 99;
   width: 100%;
   position: fixed;
@@ -192,7 +193,7 @@ header {
       display: flex;
       align-items: center;
       .img {
-        width:200px;
+        width: 200px;
         transition: 0.5s ease all;
       }
     }
