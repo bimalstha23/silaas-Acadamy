@@ -1,11 +1,8 @@
 <template>
   <v-container>
     <div class="section-content">
-      <h1 class="section-title">Tired of switching between multiple apps?</h1>
-      <p>
-        With Tigg ERP, you can manage all your business from a single
-        streamlined application.
-      </p>
+      <h1 class="section-title">Want more features in the same platform ?</h1>
+      <p>We believe, you should be equipped with complete set of tools.</p>
       <v-img
         class="homeImg"
         max-height="500"
@@ -38,13 +35,17 @@ div.section-content {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 40px;
   width: 70%;
 }
- @media only screen and (max-width: 600px) {
- h1.section-title {
+.homeImg {
+  padding: 25px;
+}
+@media only screen and (max-width: 600px) {
+  h1.section-title {
     font-size: 25px;
     width: 100%;
     line-height: 40px;
- }
- }
+  }
+}
 </style>
