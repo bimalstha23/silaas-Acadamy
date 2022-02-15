@@ -37,18 +37,18 @@
           <transition name="mobile-nav">
             <ul v-show="mobileNav" class="dropdown-Nav">
               <li>
-                <a v-scroll-to="'#main'" class="link" href="#">Home</a>
+                <a v-on:click="toggleMobileNav" v-scroll-to="'#main'" class="link" href="#">Home</a>
               </li>
               <li>
-                <a v-scroll-to="'#services'" class="link" href="#">Services</a>
-              </li>
-
-              <li>
-                <a v-scroll-to="'#feature'" class="link" href="#">Features</a>
+                <a v-on:click="toggleMobileNav" v-scroll-to="'#services'" class="link" href="#">Services</a>
               </li>
 
               <li>
-                <a v-scroll-to="'#contactUs'" class="link" href="#"
+                <a v-on:click="toggleMobileNav"  v-scroll-to="'#feature'" class="link" href="#">Features</a>
+              </li>
+
+              <li>
+                <a v-on:click="toggleMobileNav" v-scroll-to="'#contactUs'" class="link" href="#"
                   >Contact Us</a
                 >
               </li>

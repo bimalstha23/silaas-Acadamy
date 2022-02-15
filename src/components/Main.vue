@@ -2,7 +2,7 @@
   <v-main class="mainmenu">
     <v-container class="container">
       <v-row>
-        <v-col lg="4" sm="4" xs="12" md="5">
+        <v-col lg="4" sm="12" xs="12" md="5">
           <div class="Main-text">
             <h1 class="intro-text">
               Your all-in-one learning <br />
@@ -18,8 +18,7 @@
             </p>
           </div>
         </v-col>
-        <v-spacer></v-spacer>
-        <v-col lg="7" md="7" sm="7" xs="12">
+        <v-col lg="7" md="7" sm="12" xs="12">
           <v-img
             class="homeImg"
             max-height="500"
@@ -72,15 +71,14 @@ h2.intro-question {
   font-family: poppins;
   font-size: 15px;
   font-weight: 600px;
+
 }
 p.intro-contact {
   color: #ffb032;
   font-size: 12px;
+  
 }
-div.intro-contactFrom {
-  display: inline-flex;
-  align-content: left;
-}
+
 .homeImg {
   margin-top: 100px;
 }
@@ -92,16 +90,32 @@ div.intro-contactFrom {
   padding-bottom: 50px;
 }
 @media only screen and (max-width: 600px) {
+  div.main-text{
+    width: 90%;
+    text-align: center;
+  }
+  p.intro-contact{
+width: 90%;
+  text-align: center;
+  }
   h1.intro-text {
     font-size: 30px;
     line-height: 40px;
     margin-bottom: 0px;
+    width: 90%;
+    text-align: center;
+  }
+  h2.intro-question {
+  width: 90%;
+  text-align: center;
   }
   .container {
     margin-top: 40px;
   }
   p.intro-subtext {
     margin-top: 0px;
+    width: 90%;
+    text-align: center;
   }
   .homeImg {
     margin-top: 0px;
